@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+       <bean class="ru.kpfu.itis.spring.lec01.lab02.ShakespeareQuoter" name="shakespeareQuoter" scope="prototype">
+              <property name="quote" value="2b | !2b"/>
+       </bean>
+       <bean class="ru.kpfu.itis.spring.lec01.lab02.TerminatorQuoter" name="terminatorQuoter" scope="prototype">
+              <property name="quotes">
+                     <list>
+                            <value>Hasta la vista, baby!</value>
+                            <value>I'll be back!</value>
+                            <ref bean="trustMe"/>
+                     </list>
+              </property>
+       </bean>
+       <bean class="java.lang.String" id="trustMe">
+              <constructor-arg type="java.lang.String" value="Trust me"/>
+       </bean>
+
+</beans>
